@@ -7,7 +7,7 @@ Waterbed Rooms is a Drupal 7 Feature to create a backend for a site like http://
 
 This Feature include some tweaks and tricks you can read inside the file waterbed_rooms.module
 
-* Custom Image Fortatter for Services ( Absolute path with option to select an image style)
+* Custom Image Formatter for Services ( Absolute path with option to select an image style)
 * View query alter to add extra group by
 * Created custom Service Resource *node_waterbed* to return some extra information about owner and enable field_pictures to return absolute paths.
 
@@ -26,27 +26,27 @@ This Feature include some tweaks and tricks you can read inside the file waterbe
 * <a target="_blank" href="https://drupal.org/project/views"></a>Views</a>
 * <a target="_blank" href="drupal.org/project/rooms">Rooms</a>
 * <a target="_blank" href="https://drupal.org/sandbox/ziomizar/2086255">Rooms_node</a>. (Sandbox)
-* <a target="_blank" href="https://drupal.org/project/cors">cors</a>
+* <a target="_blank" href="https://drupal.org/project/cors">Cors</a>
 
 ## Installation.
 
-Before to enable the Feature Waterbed Rooms, I recommend install the Rooms module, becuase could be little tricky, you can find the instructions at <a target="_blank" href="http://www.drupalrooms.com/docs"></a>http://www.drupalrooms.com/docs</a> (don't forget the libraries section).
+Before to enable the Feature Waterbed Rooms, I recommend install the Rooms module, because could be little tricky, you can find the instructions at <a target="_blank" href="http://www.drupalrooms.com/docs"></a>http://www.drupalrooms.com/docs</a> (don't forget the libraries section).
 
-Is requiered apply the patch <a target="_blank"href="https://drupal.org/node/2274681#comment-8816065"></a>https://drupal.org/node/2274681#comment-8816065</a> to Sandbox module Rooms Node.
+Is required apply the patch <a target="_blank"href="https://drupal.org/node/2274681#comment-8816065"></a>https://drupal.org/node/2274681#comment-8816065</a> to Sandbox module Rooms Node.
 
 After enable Feature Module Waterbed Rooms, is required edit the Content Type "Standard Doubles" (http://YOURDOMAIN/admin/structure/types/manage/room-standard-doubles) to enable the contact type as a Room Node. (see image)
 
-![Edit Content TYpe Standard Doubles](https://raw.githubusercontent.com/enzolutions/drupal_waterbed_rooms/master/images/edit_room_availability.png "Edit Content TYpe Standard Doubles")
+![Edit Content Type Standard Doubles](https://raw.githubusercontent.com/enzolutions/drupal_waterbed_rooms/master/images/edit_room_availability.png "Edit Content Type Standard Doubles")
 
 
-After create "Standard Doubles" nodes,  is required update the room availabilty (http://YOURDOMAIN/node/1/availability) (see image)
+After create "Standard Doubles" nodes,  is required update the room availability (http://YOURDOMAIN/node/1/availability) (see image)
 
 ![Editing Room Node Availablity](https://raw.githubusercontent.com/enzolutions/drupal_waterbed_rooms/master/images/edit_room_node_content_type.png "Editing Room Node Availablity")
 
 
 ### Usage
 
-The goal of this project is to create a backend for a service similat to Airbnb, after complete the installation steps and create some Room Nodes with avalability you will be ready to consume the API to fetch rooms information.
+The goal of this project is to create a backend for a service similar to Airbnb, after complete the installation steps and create some Room Nodes with availability you will be ready to consume the API to fetch rooms information.
 
 #### Getting all rooms available
 
@@ -93,3 +93,13 @@ You can combine price and date filtering. In any case we will a JSON response si
 ````
 
 You can check a live example at <a target="_blank"href="http://waterbed-backend.7sabores.com/api/views/waterbed.json">http://waterbed-backend.7sabores.com/api/views/waterbed.json</a>.
+
+#### CORS
+
+If you are planning to use your own server to test, remember use the module CORS to enable CORS request and avoid errors related invalid client request because the client isn't located under same domain. Just go to http://YOURDOMAIN/admin/config/services/cors and do a similar setting as suggested below.
+
+````
+api/*|http://localhost:8080|POST,ADD,GET,PUT,DELETE,OPTIONS|X-CSRF-Token|true
+````
+
+Your port is necessary only if you use other port than 80
