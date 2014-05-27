@@ -16,14 +16,14 @@ This Feature include some tweaks and tricks you can read inside the file waterbe
 * <a target="_blank" href="drupal.org/project/features">Features</a>.
 * <a target="_blank" href="drupal.org/project/date">Date</a>.
 * <a target="_blank" href="drupal.org/project/commerce">Commerce</a>.
-* <a target="_blank" href="https://drupal.org/project/entityreference"></a>Entityreference</a>.
+* <a target="_blank" href="https://drupal.org/project/entityreference">Entityreference</a>.
 * <a target="_blank" href="https://drupal.org/project/rules">Rules</a>.
 * <a target="_blank" href="https://drupal.org/project/geocoder">Geocoder</a>.
 * <a target="_blank" href="https://drupal.org/project/geocoder_autocomplete">Geocoder_autocomplete</a>.
 * <a target="_blank" href="https://drupal.org/project/geofield">Geofield</a>.
 * <a target="_blank" href="https://drupal.org/project/services">Services</a>.
 * <a target="_blank" href="https://drupal.org/project/services_views">Services_views</a>
-* <a target="_blank" href="https://drupal.org/project/views"></a>Views</a>
+* <a target="_blank" href="https://drupal.org/project/views">Views</a>
 * <a target="_blank" href="drupal.org/project/rooms">Rooms</a>
 * <a target="_blank" href="https://drupal.org/sandbox/ziomizar/2086255">Rooms_node</a>. (Sandbox)
 * <a target="_blank" href="https://drupal.org/project/cors">Cors</a>
