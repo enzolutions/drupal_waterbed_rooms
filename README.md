@@ -1,15 +1,25 @@
 Drupal Waterbed Rooms
 =====================
 
-Waterbed Rooms is a Drupal 7 Feature to create a backend for a site like http://airbnb.com with minimal features.
+Waterbed Rooms is a Drupal 7 Feature to create a website similar to http://airbnb.com with minimal features.
+
+## Download
+
+````
+$ git clone git@github.com:enzolutions/drupal_waterbed_rooms.git
+````
 
 ## Tweaks and Tricks included
 
-This Feature include some tweaks and tricks you can read inside the file waterbed_rooms.module
+This Feature includes some pretty cool tweaks and tricks. You can read more about them on the waterbed_rooms.module file.
 
-* Custom Image Formatter for Services ( Absolute path with option to select an image style)
-* View query alter to add extra group by
-* Created custom Service Resource *node_waterbed* to return some extra information about owner and enable field_pictures to return absolute paths.
+Some of my favorites include:
+
+* Custom Image Formatter for Services (Uses an absolute path with an option to define an image style preset).
+
+* View query alter used to add an extra “Group By”.
+
+* Creates a custom Service Resource (node_waterbed) to return some extra information about the owner. Also it enables field_pictures to return absolute paths.
 
 ## Drupal Dependencies
 
@@ -30,23 +40,23 @@ This Feature include some tweaks and tricks you can read inside the file waterbe
 
 ## Installation.
 
-Before to enable the Feature Waterbed Rooms, I recommend install the Rooms module, because could be little tricky, you can find the instructions at <a target="_blank" href="http://www.drupalrooms.com/docs"></a>http://www.drupalrooms.com/docs</a> (don't forget the libraries section).
+Before enabling the Feature Waterbed Rooms, I recommend installing the Rooms module, because it could get a little tricky. You can find instructions on how to do that at <a target="_blank" href="http://www.drupalrooms.com/docs"></a>http://www.drupalrooms.com/docs</a> (don't forget the libraries section).
 
-Is required apply the patch <a target="_blank"href="https://drupal.org/node/2274681#comment-8816065"></a>https://drupal.org/node/2274681#comment-8816065</a> to Sandbox module Rooms Node.
+Another requirement is applying the patch <a target="_blank"href="https://drupal.org/node/2274681#comment-8816065"></a>https://drupal.org/node/2274681#comment-8816065</a> to Sandbox module Rooms Node.
 
-After enable Feature Module Waterbed Rooms, is required edit the Content Type "Standard Doubles" (http://YOURDOMAIN/admin/structure/types/manage/room-standard-doubles) to enable the contact type as a Room Node. (see image)
+After you enable the Waterbed Rooms feature, you are required to edit the Content Type "Standard Doubles" (/admin/structure/types/manage/room-standard-doubles) and enable the contact type as a Room Node. (see image)
 
 ![Edit Content Type Standard Doubles](https://raw.githubusercontent.com/enzolutions/drupal_waterbed_rooms/master/images/edit_room_availability.png "Edit Content Type Standard Doubles")
 
 
-After create "Standard Doubles" nodes,  is required update the room availability (http://YOURDOMAIN/node/1/availability) (see image)
+After creating some Standard Doubles nodes, you need to update the room availability (i.e.: http://YOURDOMAIN/node/1/availability) (see image)
 
 ![Editing Room Node Availablity](https://raw.githubusercontent.com/enzolutions/drupal_waterbed_rooms/master/images/edit_room_node_content_type.png "Editing Room Node Availablity")
 
 
 ### Usage
 
-The goal of this project is to create a backend for a service similar to Airbnb, after complete the installation steps and create some Room Nodes with availability you will be ready to consume the API to fetch rooms information.
+The goal of this project is to create a backend for a service similar to Airbnb, after completing the installation steps and creating some Room Nodes with availability you will be ready to consume the API and fetch room information.
 
 #### Getting all rooms available
 
@@ -65,7 +75,7 @@ http://YOURDOMAIN/api/views/waterbed.json?availabilty[min]=2014-5-20&availabilty
 http://YOURDOMAIN/api/views/waterbed?price[min]=30&price[max]=45
 ````
 
-You can combine price and date filtering. In any case we will a JSON response similar to next example.
+You can combine price and date filtering. In any case we will a get JSON response similar to next example.
 
 ````
 [
@@ -92,11 +102,11 @@ You can combine price and date filtering. In any case we will a JSON response si
 ]
 ````
 
-You can check a live example at <a target="_blank"href="http://waterbed-backend.7sabores.com/api/views/waterbed.json">http://waterbed-backend.7sabores.com/api/views/waterbed.json</a>.
+You can check out a live demo at <a target="_blank"href="http://waterbed-backend.7sabores.com/api/views/waterbed.json">http://waterbed-backend.7sabores.com/api/views/waterbed.json</a>.
 
 #### CORS
 
-If you are planning to use your own server to test, remember use the module CORS to enable CORS request and avoid errors related invalid client request because the client isn't located under same domain. Just go to http://YOURDOMAIN/admin/config/services/cors and do a similar setting as suggested below.
+If you’re planning to use your own server to test, remember use the CORS module to enable CORS requests and avoid errors related to invalid client requests because the client isn't located under same domain.Just go to http://YOURDOMAIN/admin/config/services/cors and do a similar setting as suggested below.
 
 ````
 api/*|http://localhost:8080|POST,ADD,GET,PUT,DELETE,OPTIONS|X-CSRF-Token|true
